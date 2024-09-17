@@ -212,7 +212,7 @@ RGB Schema 类似于面向对象编程（OOP）语言中的类。在使用这个
 
 - 什么样的交易顺序是合法的？
 
-  ![schema](D:\Project\rgb-doc\schema.png)
+  ![schema](.\schema.png)
 
   
 
@@ -251,7 +251,7 @@ Well, the motivation is ultra-simple: reduce the size of the consignment and mak
 AluVM 是用 Rust 编写的。你可以通过 LLVM 中间表示（IR）编译它，然后使用 zk-LLVM 将其转换为 zk 电路。简单来说就是这样。更难的部分是如何压缩一次性密封的历史证明 —— 这需要集成 zkSync 或使用新的第 1 层协议（如 Prometheus）。
 我们的动机非常简单：缩小 Consignment 的规模，使其不再增长。）
 
-![RGB_validation](D:\Project\rgb-doc\RGB_validation.png)
+![RGB_validation](.\RGB_validation.png)
 
 **LLVM**（Low-Level Virtual Machine） 是一个编译器框架，可以用于生成、优化和编译中间代码（intermediate code）到机器代码。它最早是作为一个虚拟机项目开始的，但发展成了一个强大且灵活的编译器基础架构，现在被广泛应用于多种编程语言。
 
@@ -302,7 +302,7 @@ Bob在确认的时候是做了下面内容：
 - 验证 Consignment中包含的每个 RGB 状态数据，包括最后一个将所有权分配给 Bob 对合约的 New State。
 - 通过Consignment中包含的Anchor（锚点），他验证了从创世到最后状态发生的见证交易顺序的时间顺序，以及指向此处包含的 RGB 数据的相关承诺。
 
-![转账流程](D:\Project\rgb-doc\转账流程.png)
+![转账流程](.\转账流程.png)
 
 ## 更加细节部分
 
@@ -326,7 +326,7 @@ RGB 的独特特性在于，Seal Definition 和 Owned State 都可以以显示�
 
 Seal Definition 和 Owned State 的所有四种显示/隐藏形式组合如下图所示：
 
-![assignment](D:\Project\rgb-doc\assignment.png)
+![assignment](.\assignment.png)
 
 ### Seal Definition
 
@@ -380,7 +380,7 @@ RGB协议的一个重要通用特性是，能够将属于同一合约的不同�
 
 下图展示了与 RGB 合约相关的所有三种合约操作及其在相关于 RGB 合约的有向无环图（DAG）中的位置，按照它们在比特币区块链中的锚点进行排序：绿色为 Genesis，红色为状态转换，蓝色为状态扩展。
 
-![bundleld](D:\Project\rgb-doc\bundleld.png)
+![bundleld](.\bundleld.png)
 
 橙色部分表示比特币区块链中的区块，其中的承诺通过锚点链接到客户端数据。需要注意的是，普通状态转换与两种状态生成操作之间的主要区别在于缺乏 Seal 的关闭部分。因此，为了出现在区块链历史中，Genesis 和状态扩展都需要一个状态转换来关闭由它们构建的特定 Seal Definition。
 
